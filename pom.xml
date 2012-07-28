@@ -8,8 +8,22 @@
   <packaging>jar</packaging>
 
   <name>AOChat</name>
-  <url>http://maven.apache.org</url>
+  <url>http://www.aocraft.net</url>
 
+  <build>
+     <defaultGoal>clean install</defaultGoal>
+     <!-- Resources -->
+	<resources>
+		<resource>
+			<targetPath>.</targetPath>
+			<filtering>false</filtering>
+			<directory>${basedir}</directory>
+			<includes>
+				<include>LICENSE.txt</include>
+			</includes>
+		</resource>
+	</resources>
+  </build>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
