@@ -11,7 +11,6 @@
   <url>http://www.aocraft.net</url>
 
   <build>
-     <defaultGoal>clean package</defaultGoal>
      <!-- Resources -->
 	   <resources>
 	  	<resource>
