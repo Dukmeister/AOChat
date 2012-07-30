@@ -13,17 +13,19 @@
   <build>
      <defaultGoal>clean install</defaultGoal>
      <!-- Resources -->
-	<resources>
-		<resource>
-			<targetPath>.</targetPath>
-			<filtering>false</filtering>
-			<directory>${basedir}</directory>
-			<includes>
-				<include>LICENSE.txt</include>
-			</includes>
-		</resource>
-	</resources>
+	   <resources>
+	  	<resource>
+	  		<targetPath>.</targetPath>
+	  		<filtering>false</filtering>
+	  		<directory>${basedir}</directory>
+	  		<includes>
+	  			<include>LICENSE.txt</include>
+          <include>README.txt</include>
+	 	  	</includes>
+		  </resource>
+	  </resources>
   </build>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
