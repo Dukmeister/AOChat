@@ -11,7 +11,7 @@
   <url>http://www.aocraft.net</url>
 
   <build>
-     <defaultGoal>clean install</defaultGoal>
+     <defaultGoal>clean package</defaultGoal>
      <!-- Resources -->
 	   <resources>
 	  	<resource>
@@ -38,4 +38,21 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <description>AOChat is a chat system plugin for the Spout server and framework. The AOChat plugin adds char windows and chat channel configuration as well as providing inter-server communication.</description>
+  <inceptionYear>2012</inceptionYear>
+  <organization>
+  	<name>AOCraft</name>
+  	<url>www.aocraft.net</url>
+  </organization>
+  <scm>
+  	<url>https:/bitbucket/pcharcbon/aochat</url>
+  </scm>
+  <issueManagement>
+  	<system>JIRA</system>
+  	<url>http://www.ancientorder.net:8081</url>
+  </issueManagement>
+  <ciManagement>
+  	<system>Bamboo</system>
+  	<url>http://www.aocraft.net:8085</url>
+  </ciManagement>
 </project>
