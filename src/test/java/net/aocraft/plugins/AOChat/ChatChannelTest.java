@@ -1,7 +1,5 @@
 package net.aocraft.plugins.AOChat;
 
-import org.spout.api.player.Player;
-
 import net.aocraft.plugins.AOChat.ChatChannel.channelType;
 import junit.framework.TestCase;
 
@@ -10,8 +8,6 @@ public class ChatChannelTest extends TestCase {
 	private ChatChannel ch1;
 	private ChatUser user1;
 	private ChatUser user2;
-	private Player player1;
-	private Player player2;
 	private String channelName;
 	private String username1;
 	private String username2;
@@ -23,12 +19,10 @@ public class ChatChannelTest extends TestCase {
 		ch1 = new ChatChannel(channelName, chType);
 		username1 = "TestUser1";
 		username2 = "TestUser2";
-		
-		// setup two player objects
-		player1.setDisplayName(username1);
+			
 		// setup two ChatUser objects
-		user1 = new ChatUser(player1);
-		user2 = new ChatUser(player2);
+		user1 = new ChatUser(username1);
+		user2 = new ChatUser(username2);
 		
 	}
 

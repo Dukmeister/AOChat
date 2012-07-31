@@ -3,8 +3,6 @@
  */
 package net.aocraft.plugins.AOChat;
 
-import org.spout.api.player.Player;
-
 import junit.framework.TestCase;
 
 /**
@@ -16,7 +14,6 @@ public class ChatUserTest extends TestCase {
 	private ChannelView view2;
     private viewPort viewPort1;
     private viewPort viewPort2;
-    private Player player1;
     private String userName1;
     
 	private void setup() {
@@ -28,12 +25,11 @@ public class ChatUserTest extends TestCase {
 		view1.setViewPort(viewPort1);
 		view2.setViewPort(viewPort2);
 		userName1="TestUser1";
-		player1.setDisplayName(userName1);
 	}
 	
 	public void testChatUser() {
 		setup();
-		ChatUser user1 = new ChatUser(player1);			
+		ChatUser user1 = new ChatUser(userName1);			
 		assertNotNull(user1);									// Object should be instantiated
 		assertEquals("TestUser1", user1.getChUserName());		// User name should be set to passed parameter
 		assertNotNull(user1.chViewPorts);							// User channels views should be instantiated
@@ -42,7 +38,7 @@ public class ChatUserTest extends TestCase {
 	
 	public void testAddViewPort() {
 		setup();
-		ChatUser user1 = new ChatUser(player1);	
+		ChatUser user1 = new ChatUser(userName1);	
 		assertEquals(0, user1.chViewPorts.size());				// View ports should be empty on initialization
 		user1.addViewPort(viewPort1);
 		assertEquals(1, user1.chViewPorts.size());				// ViewPorts should be 1 after adding a viewPort
@@ -58,7 +54,7 @@ public class ChatUserTest extends TestCase {
 	
 	public void testRemoveViewPort() {
 		setup();
-		ChatUser user1 = new ChatUser(player1);	
+		ChatUser user1 = new ChatUser(userName1);	
 		assertEquals(0, user1.chViewPorts.size());				// View ports should be empty on initialization
 		user1.addViewPort(viewPort1);
 		assertEquals(1, user1.chViewPorts.size());				// ViewPorts should be 1 after adding a viewPort
