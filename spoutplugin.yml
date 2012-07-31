@@ -1,0 +1,6 @@
+name: AOChat
+version: "Alpha 0.1"
+description: Chat channel management and cross-server communication
+author: Dukmeister
+main: net.aocraft.plugins.AOChat.AOChat
+platform: BOTH
