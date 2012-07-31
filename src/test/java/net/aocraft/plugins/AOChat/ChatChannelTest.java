@@ -1,5 +1,7 @@
 package net.aocraft.plugins.AOChat;
 
+import org.spout.api.player.Player;
+
 import net.aocraft.plugins.AOChat.ChatChannel.channelType;
 import junit.framework.TestCase;
 
@@ -8,21 +10,26 @@ public class ChatChannelTest extends TestCase {
 	private ChatChannel ch1;
 	private ChatUser user1;
 	private ChatUser user2;
-	private String userName1;
-	private String userName2;
+	private Player player1;
+	private Player player2;
 	private String channelName;
+	private String username1;
+	private String username2;
 	
 	private void setup() {
 		// setup channel
 		channelName="General";
-		userName1 = "TestUser1";
-		userName2 = "testuser2";
 		channelType chType = channelType.LOCAL;
 		ch1 = new ChatChannel(channelName, chType);
-		// setup two users 
-		user1 = new ChatUser(userName1);
-		user2 = new ChatUser(userName2);
-
+		username1 = "TestUser1";
+		username2 = "TestUser2";
+		
+		// setup two player objects
+		player1.setDisplayName(username1);
+		// setup two ChatUser objects
+		user1 = new ChatUser(player1);
+		user2 = new ChatUser(player2);
+		
 	}
 
 	public void testChatChannel() {
@@ -45,11 +52,11 @@ public class ChatChannelTest extends TestCase {
 		
 		// test method
 		assertEquals(0, ch1.chUsers.size());				// Channel should have no users on initialization
-		ch1.addChannelUser(userName1,user1);
+		ch1.addChannelUser(username1,user1);
 		assertEquals(1, ch1.chUsers.size());				// Number of users should be 1 after adding a user
-		assertNotNull(ch1.chUsers.get(userName1));			// User1 should exist in the hash map			
-		ch1.addChannelUser(userName2,user2);					
-		assertNotNull(ch1.chUsers.get(userName2));			// User2 should exist in the hash map
+		assertNotNull(ch1.chUsers.get(username1));			// User1 should exist in the hash map			
+		ch1.addChannelUser(username2,user2);					
+		assertNotNull(ch1.chUsers.get(username2));			// User2 should exist in the hash map
 		assertEquals(2, ch1.chUsers.size());				// Number of users should be 2 after adding another user
 		
 	}
@@ -59,13 +66,13 @@ public class ChatChannelTest extends TestCase {
 		setup();
 		// Test the method
 		assertEquals(0, ch1.chUsers.size());				// Channel should have no users on initialization
-		ch1.addChannelUser(userName1,user1);
-		ch1.addChannelUser(userName2,user2);				
+		ch1.addChannelUser(username1,user1);
+		ch1.addChannelUser(username2,user2);				
 		assertEquals(2, ch1.chUsers.size());				// Number of users should be 2 by now
-		ch1.removeChannelUser(userName2);
+		ch1.removeChannelUser(username2);
 		assertEquals(1, ch1.chUsers.size());				// Number of users should be 1 after remove
-		assertNull(ch1.chUsers.get(userName2));				// User2 should not exist in the hash map anymore 
-		assertNotNull(ch1.chUsers.get(userName1));			// User1 should still exist in the hash map
+		assertNull(ch1.chUsers.get(username2));				// User2 should not exist in the hash map anymore 
+		assertNotNull(ch1.chUsers.get(username1));			// User1 should still exist in the hash map
 
 	
 

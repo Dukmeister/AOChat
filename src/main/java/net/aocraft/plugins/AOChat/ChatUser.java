@@ -5,6 +5,8 @@ package net.aocraft.plugins.AOChat;
 
 import java.util.ArrayList;
 
+import org.spout.api.player.Player;
+
 
 /**
  * @author Ducky
@@ -13,11 +15,14 @@ import java.util.ArrayList;
 public class ChatUser {
 	// Class fields
 	String chUserName;
-	public ArrayList<viewPort> chViewPorts;
+	Player chPlayer;
+	ArrayList<viewPort> chViewPorts;
+	
 
 	// Class Constructor
-	public ChatUser(String pUserName){
-		chUserName = pUserName;
+	public ChatUser(Player pPlayer){
+		chPlayer = pPlayer;
+		chUserName = pPlayer.getName();
 		chViewPorts = new ArrayList<viewPort>();
 	}
 
