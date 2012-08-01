@@ -43,14 +43,14 @@ public class AOChat extends CommonPlugin {
 	public void onEnable() {
 		// Initialize game Engine reference
 		engine = this.getEngine();
-		// Load Config
+		// TODO: Load global Config
 
 		//Commands
 		CommandRegistrationsFactory<Class<?>> commandRegFactory = new AnnotatedCommandRegistrationFactory(new SimpleInjector(this), new SimpleAnnotatedCommandExecutorFactory());
 		//engine.getRootCommand().addSubCommands(this, AdministrationCommands.class, commandRegFactory);
 	
 
-		// Load default channels
+		// TODO: Load default channels config file 
 		
 		// Events 
 		

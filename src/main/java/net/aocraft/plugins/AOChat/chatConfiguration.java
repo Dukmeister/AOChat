@@ -16,17 +16,18 @@ import org.spout.api.util.config.yaml.YamlConfiguration;
  * @author Ducky
  *
  */
-public class chatConfiguration extends ConfigurationHolderConfiguration {
+public class ChatConfiguration extends ConfigurationHolderConfiguration {
 	
 	// General
 	public static final ConfigurationHolder BROADCAST = new ConfigurationHolder(true, "general", "broadcast");					// Broadcast channel entry/leaves
 	public static final ConfigurationHolder USERCHANNELS = new ConfigurationHolder(true, "general", "userchannels");			// Users can create channels
 	public static final ConfigurationHolder PRIVATEMESSAGES = new ConfigurationHolder(true, "general", "privatemessages");		// Users can send PMs
-	public static final ConfigurationHolder DEFAULTCHANNEL = new ConfigurationHolder("default", "general", "defaultchannel");   // Default channel name
+	public static final ConfigurationHolder DEFAULTCHANNEL = new ConfigurationHolder("general", "general", "defaultchannel");   // Default channel name
+	public static final ConfigurationHolder CHANNELSCONFIG = new ConfigurationHolder("channels.xml", "general", "channelsconfig");    // Channels config file name
 	public static final ConfigurationHolder LOCALCHAT = new ConfigurationHolder(true, "general", "localchat");					// Local (say) chat enabled
 	
 	
-	public chatConfiguration(File dataFolder) {
+	public ChatConfiguration(File dataFolder) {
         super(new YamlConfiguration(new File(dataFolder, "config.yml")));
     }
 	
