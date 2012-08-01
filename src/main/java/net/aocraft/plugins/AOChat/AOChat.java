@@ -33,12 +33,16 @@ public class AOChat extends CommonPlugin {
 	@Override
 	public void onDisable() {
 
+		// Release instance from memory
+		chatInstance = null;
 		// Log Status
 		getLogger().info(pluginID + "v" + getDescription().getVersion() + " has been disabled.");
 	}
 
 	@Override
 	public void onEnable() {
+		// Initialize game Engine reference
+		engine = this.getEngine();
 		// Load Config
 
 		//Commands
@@ -50,7 +54,7 @@ public class AOChat extends CommonPlugin {
 		
 		// Events 
 		
-		//engine.getEventManager().registerEvents(new ChatListener(this), this);
+		engine.getEventManager().registerEvents(new ChatListener(this), this);
 		
 		// Log Status
 
