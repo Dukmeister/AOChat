@@ -26,7 +26,7 @@ public class AOChat extends CommonPlugin {
 	// Map of channels currently loaded, key = channel name
 	public static HashMap<String, ChatChannel> chChannels = new HashMap<String, ChatChannel>();
 	// Plugin instance
-	private static AOChat chatInstance;
+	public static AOChat chatInstance;
 	// Game engine 
 	private Engine engine;
 
