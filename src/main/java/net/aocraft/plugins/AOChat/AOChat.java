@@ -36,7 +36,7 @@ public class AOChat extends CommonPlugin {
 		// Release instance from memory
 		chatInstance = null;
 		// Log Status
-		getLogger().info(pluginID + "v" + getDescription().getVersion() + " has been disabled.");
+		getLogger().info(" v" + getDescription().getVersion() + " has been disabled.");
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public class AOChat extends CommonPlugin {
 		
 		// Log Status
 
-		getLogger().info(pluginID + "v" + getDescription().getVersion() + " has been enabled.");
+		getLogger().info(" v" + getDescription().getVersion() + " has been enabled.");
 
 	}
 

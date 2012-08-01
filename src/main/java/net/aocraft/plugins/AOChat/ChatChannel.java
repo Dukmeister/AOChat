@@ -40,10 +40,12 @@ public class ChatChannel {
 	
 	public void addChannelUser(String pName, ChatUser pUser) {	// Adds a user to the channel
 		chUsers.put(pName, pUser);
+		// TODO: Broadcast message to channel
 	}
 	
 	public void removeChannelUser(String pUserName) {		// Remove user from channel, small collection? could use HashMap maybe? 
 		chUsers.remove(pUserName);
+		// TODO: Broadcast message to channel
 	}
 	
 	

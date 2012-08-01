@@ -30,7 +30,7 @@ public class ChatListener implements Listener {
 		
 		Player player = event.getPlayer();
 		Entity playerEntity = player.getEntity();
-		
-		plugin.getLogger().info(player.getName() + " has entered chat channel.");
+		// Load Player Chat configuration
+		plugin.getLogger().info("Loading "+player.getName() + " chat channels preferences.");
 	}
 }
