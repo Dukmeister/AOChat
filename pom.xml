@@ -40,7 +40,8 @@
 	  		<directory>${basedir}</directory>
 	  		<includes>
 	  			<include>LICENSE.txt</include>
-          <include>README.txt</include>
+                <include>README.txt</include>
+                <include>plugin.yml</include>
 	 	  	</includes>
 		  </resource>
 	  </resources>
